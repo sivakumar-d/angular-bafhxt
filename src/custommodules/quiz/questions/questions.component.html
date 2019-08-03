@@ -1,10 +1,14 @@
 <mat-card *ngIf="questions$|async as questions">
     <ng-container *ngIf="currentQuestion < questionCount; else quiz_results">
         <mat-card-header>
-            <div mat-card-avatar class="header-image"></div>
-            <mat-card-title>Super Duper Quiz</mat-card-title>
-            <mat-card-subtitle *ngIf="currentQuestion < questionCount; else quiz_finished">Question {{currentQuestion + 1}} of {{questionCount}}</mat-card-subtitle>
-            <ng-template #quiz_finished><mat-card-subtitle>Quiz Complete</mat-card-subtitle></ng-template>
+            <div _ngcontent-c0="" class="container">
+                        <a _ngcontent-c0="" class="block logo" routerlink="/home" href="/home">
+                            <img _ngcontent-c0="" alt="Procom Logo" [src]="Header_Image" title="Procom Logo">
+                        </a>   
+                        <mat-card-title>Interview Quiz App</mat-card-title>
+                        <mat-card-subtitle *ngIf="currentQuestion < questionCount; else quiz_finished">Question {{currentQuestion + 1}} of {{questionCount}}</mat-card-subtitle>
+                        <ng-template #quiz_finished><mat-card-subtitle>Quiz Complete</mat-card-subtitle></ng-template>
+                    </div> 
         </mat-card-header>
         <form #questionForm="ngForm">
             <mat-card-content>              
