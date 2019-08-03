@@ -11,7 +11,6 @@ import {Questions} from './questions.model';
 export class QuestionsComponent implements OnInit {
   correctCount = 0;
   currentQuestion = 0;
-  progressValue = 0;
   questionCount;
   questions$;
   selectedOption;
@@ -56,7 +55,7 @@ export class QuestionsComponent implements OnInit {
     this.questions$ = this.QuestionsService.getQuestions();
     this.questions$.subscribe((questions: Questions[]) => {
         this.questionCount = questions['quiz-questions'].length;
-        this.progressValue = 100 * (this.currentQuestion + 1) / this.questionCount;
+      
     });
   }Questions
 
@@ -64,6 +63,5 @@ export class QuestionsComponent implements OnInit {
     if (answer === this.selectedOption) {this.correctCount++; }
     delete this.selectedOption;
     this.currentQuestion++;
-    this.progressValue = 100 * (this.currentQuestion + 1) / this.questionCount;
   }
 }
