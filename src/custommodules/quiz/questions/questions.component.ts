@@ -27,7 +27,7 @@ export class QuestionsComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.Header_Image= this.sanitizer.bypassSecurityTrustResourceUrl(this.Header_Image1);
     this.questions$ = this.QuestionsService.getQuestions();
     this.questions$.subscribe((questions: Questions[]) => {
         this.questionCount = questions['quiz-questions'].length;
