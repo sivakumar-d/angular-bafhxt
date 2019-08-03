@@ -25,7 +25,7 @@ export class QuestionsComponent implements OnInit {
   ngOnInit() {
     this.questions$ = this.QuestionsService.getQuestions();
     this.questions$.subscribe((questions: Questions[]) => {
-        this.questionCount = questions['questions'].length;
+        this.questionCount = questions['quiz-questions'].length;
         this.progressValue = 100 * (this.currentQuestion + 1) / this.questionCount;
     });
   }Questions
